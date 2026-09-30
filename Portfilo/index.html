@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal portfolio showcasing selected work, background, and contact details.">
+  <title>Your Name — Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #272333;
+      --muted: #6f6a78;
+      --paper: #f8f7fb;
+      --accent: #7552a4;
+      --line: #e7e2ed;
+    }
+
+    * { box-sizing: border-box; }
+
+    
+
+
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+      margin: 0;
+      color: #f4eff8;
+      background:
+        linear-gradient(rgba(26, 29, 45, 0.88), rgba(29, 33, 51, 0.88)),
+        url("images/b1.jpg") center / cover ;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 4, 46, 0.88);
+      border-bottom: 1px solid #ffffff18;
+      padding: 12px;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(100% - 40px, 980px);
+      margin: auto;
+    }
+
+    h2{
+      color: #29f0bf;
+      font-size: x-large;
+      font-weight: 800;
+      text-align: center;
+    }
+
+
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 750;
+      text-decoration: none;
+      letter-spacing: -.03em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #11c92d;
+      font-size: x-large;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #40e4fd;
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      padding: 104px 24px 96px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(#10121ccc, #10121ccc),
+        url("images/it's ai world.jpg") center / cover no-repeat;
+    }
+
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    @media (max-width: 700px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-photo {
+        max-height: 380px;
+      }
+    }
+
+    .ani {
+      animation: move-box 2s;
+      animation-iteration-count: infinite;
+      font-size: 120px;
+      transition: ease-in;
+  }
+
+  @keyframes move-box {
+      0% {
+          color: #f4c828;
+      }
+
+      10% {
+          color: #18e3a7;
+      }
+
+      20% {
+          color: #3174f1;
+      }
+
+      30% {
+          color: #ac51fc;
+      }
+
+      40% {
+          color: #03f478;
+      }
+
+      50% {
+          color: #b3e60b;
+      }
+
+      60% {
+          color: #69c8f4;
+      }
+
+      70% {
+          color: #eefa41;
+      }
+
+      80% {
+          color: #05ff50;
+      }
+
+      90% {
+          color: #b6f943;
+      }
+
+      100% {
+          color: #d8ea37;
+      }
+
+  }
+
+    .eyebrow {
+      color: #1bf8e9;
+      font-size: larger;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 16px 0 22px;
+      font-size: clamp(2.8rem, 8vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+
+    .intro {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 11px 18px;
+      border-radius: 7px;
+      background: var(--accent);
+      color: white;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 64px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .about-card {
+      position: relative;
+      min-height: 300px;
+      padding: 24px;
+      border: 1px solid #dfe5df;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #7a45ee 0%, #b18be2 100%);
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+
+    .about-front,
+    .about-details {
+      transition: opacity 200ms ease, transform 250ms ease;
+    }
+
+    .about-front { 
+      text-align: center;
+      color: #faf8f8;
+    }
+
+    .about-front p {
+      color: #303231;
+    }
+
+    .about-details {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      background: linear-gradient(135deg ,#f4c828 ,#f4ec03 100%);
+      color: rgb(87, 14, 232);
+      opacity: 0;
+      font-size: larger;
+      transform: translateY(12px);
+      text-align: center;
+      border: 8px solid #01034e;
+      border-radius: 12px;
+    }
+
+    .about-details h3 { 
+      margin-top: 0;
+      color: #fb0303;
+    }
+
+    
+
+    .about-card:hover,
+    .about-card:focus {
+      transform: perspective(800px) rotateY(6deg) rotateX(3deg) translateY(-5px);
+      box-shadow: 0 18px 36px rgba(23, 33, 29, 0.15);
+      outline: none;
+    }
+
+    .about-card:hover .about-front,
+    .about-card:focus .about-front {
+      opacity: 0;
+    }
+
+    .about-card:hover .about-details,
+    .about-card:focus .about-details {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: #f4ec03;
+    }
+
+    @media (max-width: 640px) {
+      .about-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+
+    .skills {
+      padding: 64px 0;
+    }
+
+    .skill-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: 1fr 50px;
+      gap: 40px;
+      row-gap: 40px;
+    }
+
+    .skill-card {
+      position: relative;
+      min-height: 220px;
+      padding: 28px;
+      overflow: hidden;
+      color: #dfe5df;
+      border: 1px solid #dfe5df;
+      border-radius: 16px;
+      font-size: larger;
+      background: linear-gradient(135deg, #560256,#941194 ,#b83db8  ,#ad59a1);
+      box-shadow: 0 8px 24px rgba(23, 33, 29, 0.06);
+      transition: transform 250ms ease, box-shadow 250ms ease;
+      transform-style: preserve-3d;
+    }
+
+    .skill-card:hover,
+    .skill-card:focus {
+      transform: perspective(800px) rotateY(8deg) rotateX(4deg) translateY(-6px);
+      box-shadow: 0 18px 36px rgba(23, 33, 29, 0.15);
+      outline: none;
+      color: #bb27e0;
+    }
+
+    .skill-front,
+    .skill-details {
+      transition: opacity 200ms ease, transform 250ms ease;
+    }
+
+    .skill-front { text-align: center; }
+
+    .icon {
+      font-size: 2rem;
+    }
+
+    .skill-front p {
+      color: #303231;
+      font-size: 0.9rem;
+    }
+
+    .skill-details {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      align-content: center;
+      padding: 28px;
+      background: linear-gradient(135deg, #0ef1ee 0%, #d5e6e8 100%);
+      color: rgb(247, 3, 235);
+      font-size: large;
+      opacity: 0;
+      transform: translate(1px);
+    }
+
+    .skill-details h3 { 
+      margin: 8px 0 8px;
+      color: #3817bd;
+    }
+
+    .skill-details p { margin: 0; }
+
+    .skill-card:hover .skill-details, .skill-card:focus .skill-details {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    .skill-card:hover .skill-front, .skill-card:focus .skill-front {
+      opacity: 0;
+    }
+
+    @media (max-width: 640px) {
+      .skill-cards { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skill-card, .skill-front, .skill-details { transition: none; }
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      transition: transform 500ms linear;
+      transform-style:preserve-3d;
+
+    }
+
+    .project:hover {
+      animation: flipOnce 600ms ease;
+    }
+
+    @keyframes flipOnce {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(360deg); }
+    }
+
+    .project-art {
+      display: grid;
+      min-height: 190px;
+      place-items: center;
+      background: #e7eee8;
+      color: #257749;
+      font-weight: 700;
+    }
+
+    .project-image {
+      display: block;
+      width: 100%;
+      height: 330px;
+      object-fit:cover;
+      object-position: center;
+    }
+
+    .project:nth-child(2) .project-art {
+      background: #eee9e1;
+      color: #4f3c28;
+    }
+
+    .project:nth-child(3) .project-art {
+      background: #e8eaf2;
+      color: #3c3e48;
+    }
+
+    .project:nth-child(4) .project-art {
+      background: #f0e7e9;
+      color: #6b1128;
+    }
+
+    .project-copy { 
+      padding: 20px;
+      color: #29026c;
+    }
+
+    .project h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .project p,
+    .about-copy {
+      margin: 0;
+      color: #204701;
+    }
+
+    .role {
+      margin-top: 12px !important;
+      font-size: .9rem;
+    }
+
+    .about-copy {
+      max-width: 680px;
+      font-size: 1.08rem;
+    }
+
+    #education {
+      padding: 64px 0;
+    }
+
+    .education-card {
+      margin-bottom: 18px;
+      padding: 24px;
+      border: 2px solid #10024f;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #01034e, #4e289e);
+      box-shadow: 0 8px 20px rgba(35, 20, 60, 0.08);
+      transition: transform 250ms ease, box-shadow 250ms ease, scale 0.2s ease, border-color 0.2s ease;
+    }
+
+    .education-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 14px 28px rgba(35, 20, 60, 0.15);
+      border-color: #03faf6;
+    }
+
+    .education-card h3 {
+      margin: 0 0 8px;
+      color: #f5f5f6;
+    }
+
+    .education-card p {
+      margin: 4px 0;
+      color: #68736d;
+    }
+
+    .hobbies {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .hobby-deck {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .hobby-card {
+      flex: 0 0 220px;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid #ffffff55;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #692db2, #c18bf8);
+      color: white;
+      text-align: left;
+      box-shadow: 0 12px 28px #24133b44;
+      transition: transform 400ms ease, margin 400ms ease;
+    }
+
+    .hobby-card + .hobby-card {
+      margin-left: -150px; /* overlap to create the deck */
+    }
+
+    /* Spread and fan the cards on hover */
+    .hobby-deck:hover .hobby-card,
+    .hobby-deck:focus-within .hobby-card {
+      margin-left: 12px;
+    }
+
+    .hobby-deck:hover .hobby-card:first-child,
+    .hobby-deck:focus-within .hobby-card:first-child {
+      transform: rotate(-15deg) translateY(20px) translateX(-12px);
+    }
+
+    .hobby-deck:hover .hobby-card:nth-child(2),
+    .hobby-deck:focus-within .hobby-card:nth-child(2) {
+      transform: rotate(-6deg) translateY(-32px);
+    }
+
+    .hobby-deck:hover .hobby-card:nth-child(3),
+    .hobby-deck:focus-within .hobby-card:nth-child(3) {
+      transform: rotate(0) translateY(-44px);
+    }
+
+    .hobby-deck:hover .hobby-card:nth-child(4),
+    .hobby-deck:focus-within .hobby-card:nth-child(4) {
+      transform: rotate(6deg) translateY(-32px);
+    }
+
+    .hobby-deck:hover .hobby-card:nth-child(5),
+    .hobby-deck:focus-within .hobby-card:nth-child(5) {
+      transform: rotate(15deg) translateY(20px) translateX(12px);
+    }
+
+    .hobby-card span {
+      font-size: 2rem;
+    }
+
+    .hobby-card h3 {
+      margin: 18px 0 8px;
+    }
+
+    .hobby-card p {
+      margin: 0;
+      color: #f1e9fa;
+      line-height: 1.5;
+    }
+
+    .hobby-img{
+      display: block;
+      width: 100%;
+      height: 150px;
+      object-fit:cover;
+      object-position: center;
+    }
+
+    @media (max-width: 700px) {
+      .hobby-deck {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+
+      .hobby-card + .hobby-card {
+        margin-left: 0;
+      }
+
+      .hobby-deck:hover .hobby-card,
+      .hobby-deck:focus-within .hobby-card {
+        margin-left: 0;
+      }
+    }
+
+      #learning {
+        padding: 64px 0;
+      }
+
+      .learning-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 760px;
+        margin: 30px auto 0;
+        padding-left: 42px;
+        position: relative;
+      }
+
+      /* Roadmap path */
+      
+
+      .learning-cards .education-card {
+        position: relative;
+        margin: 0;
+        padding: 22px 24px;
+        border: 1px solid #ffffff30;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #3f1d63, #7040a0);
+        color: white;
+        box-shadow: 0 10px 24px #1d0c3040;
+      }
+
+      /* Numbered marker beside each card */
+      .learning-cards .education-card::before {
+        content: counter(learning-step);
+        counter-increment: learning-step;
+        position: absolute;
+        left: -53px;
+        top: 22px;
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border: 3px solid #d8b5ff;
+        border-radius: 50%;
+        background: #3f1d63;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .learning-cards {
+        counter-reset: learning-step;
+      }
+
+      
+
+      .learning-cards .education-card h3 {
+        margin: 0 0 8px;
+        color: #fff;
+      }
+
+      .learning-cards .education-card p {
+        margin: 0;
+        color: #eadcf8;
+        line-height: 1.6;
+      }
+
+      @keyframes cardPop {
+      0%, 8%, 24%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(35, 20, 60, 0.08);
+      }
+
+      12%, 20% {
+        transform: scale(1.1);
+        box-shadow: 0 16px 30px rgba(35, 20, 60, 0.2);
+      }
+    }
+
+    .learning-cards .education-card {
+      animation: cardPop 6s ease-in-out infinite;
+    }
+
+    .learning-cards .education-card:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+
+    .learning-cards .education-card:nth-child(3) {
+      animation-delay: 3s;
+    }
+
+    .learning-cards .education-card:nth-child(4) {
+      animation-delay: 4.5s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .learning-cards .education-card {
+        animation: none;
+      }
+    }
+
+    .contact {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+      color: #b6f943;
+    }
+
+    .contact p {
+      color: #99f41b;
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 18px;
+      justify-content: center;
+    }
+
+    .contact-links a {
+      color: #0cf830;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact label {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #dfe5df;
+      border-radius: 8px;
+      background: white;
+      color: #17211d;
+      font: inherit;
+    }
+
+    .contact textarea {
+      resize: vertical;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border-color: #0b9920;
+      outline: 2px solid #0b992033;
+    }
+
+    .contact button {
+      justify-self: start;
+      margin-top: 12px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 8px;
+      background: #0b9920;
+      color: white;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 200ms ease, transform 200ms ease;
+    }
+
+    .contact button:hover {
+      background: #087719;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+      background: transparent;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 32px, 980px); }
+      .hero { padding: 76px 0 68px; }
+      nav { align-items: flex-start; flex-direction: column; }
+      nav ul { gap: 16px; flex-wrap: wrap; }
+      .projects { grid-template-columns: 1fr; }
+      section { padding: 48px 0; }
+    }
+
+        /* Tablet */
+    @media (max-width: 900px) {
+      .about-cards,
+      .skill-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .skill-cards {
+        grid-template-rows: auto;
+      }
+
+      .projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-image {
+        height: 260px;
+      }
+    }
+
+    /* Phones */
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 32px, 980px);
+      }
+
+      header {
+        padding: 12px 0;
+      }
+
+      header nav {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        padding: 64px 0;
+      }
+
+      .hero h1.ani {
+        font-size: clamp(2.4rem, 10vw, 4rem);
+        line-height: 1.1;
+      }
+
+      .intro {
+        font-size: 1rem;
+      }
+
+      section,
+      .skills {
+        padding: 44px 0;
+      }
+
+      .about-cards,
+      .skill-cards,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-cards {
+        grid-template-rows: auto;
+        gap: 18px;
+      }
+
+      .project-image {
+        height: 240px;
+      }
+
+      .education-card,
+      .about-card,
+      .skill-card {
+        padding: 20px;
+      }
+
+      .learning-cards {
+        padding-left: 32px;
+      }
+
+      .hobby-deck {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 0;
+      }
+
+      .hobby-card {
+        width: 100%;
+        min-height: 180px;
+      }
+
+      .hobby-card + .hobby-card {
+        margin-left: 0;
+      }
+
+      .hobby-deck:hover .hobby-card,
+      .hobby-deck:focus-within .hobby-card {
+        margin-left: 0;
+      }
+
+      .hobby-deck:hover .hobby-card,
+      .hobby-deck:focus-within .hobby-card {
+        transform: none;
+      }
+
+      .contact {
+        padding: 44px 16px;
+      }
+
+      .contact-links {
+        gap: 14px;
+      }
+
+      .contact input,
+      .contact textarea,
+      .contact button {
+        font-size: 1rem;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 380px) {
+      .wrap {
+        width: min(100% - 24px, 980px);
+      }
+
+      nav ul {
+        gap: 10px 14px;
+      }
+
+      .project-image {
+        height: 200px;
+      }
+
+      .about-card,
+      .skill-card,
+      .education-card,
+      .project-copy {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" >
+      <a class="brand" href="#top">Satya</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner wrap">
+      <div class="hero-content">
+        <div class="eyebrow">Designer · Developer · Creator</div>
+        <h1>Hi, I’m Satya 😉</h1>
+        <p class="intro">
+          Curious by nature, creative by choice. I explore AI, web development,
+          video editing, and art.
+        </p>
+        <a class="button" href="#work">See my work</a>
+      </div>
+
+      <img class="hero-photo" src="images/hi.jpg" alt="Satya">
+    </div>
+  </section>
+
+  <main id="top" class="wrap">
+    <div >
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-cards" >
+          
+          <div class="about-card" tabindex="0">
+            <div class="about-front">
+              <img src="images/who.jpg" alt="Who?" class="hobby-img">
+              <h3>Who Am I ?</h3>
+              <p>Hover to know</p>
+            </div>
+            <div class="about-details">
+              <img src="images/download.jpg" alt="Satya" class="hobby-img">
+              <p>I'm Satya Yogieswar, a student in Scaler School of Technology, Bangalore.</p>
+            </div>
+          </div>
+
+          <div class="about-card" tabindex="0">
+            <div class="about-front">
+              <img src="images/i.jpg" alt="What" class="hobby-img">
+              <h3 >What I Do ?</h3>
+              <p>Hover to learn more</p>
+            </div>
+            <div class="about-details">
+              <img src="images/enjoy.jpg" alt="Enjoy" class="hobby-img">
+              <p>It is simple. I'm enjoying 😁<br>learning new things from my lecturers and friends.</p>
+            </div>
+          </div>
+
+          <div class="about-card" tabindex="0">
+            <div class="about-front">
+              <img src="images/mys.jpg" alt="art" class="hobby-img">
+              <h3>What I'm Exploring ? </h3>
+              <p>Hover to learn more</p>
+            </div>
+            <div class="about-details">
+              <img src="images/exp.png" alt="Myself" class="hobby-img">
+              <p>I'm Exploring different paths where I can find myself so I will not regret in future.😃</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="education">
+        <h2>Education & Experience</h2>
+
+        <div class="education-card">
+          <h3>Artificial Intelligence & Data Science</h3>
+          <p>Scaler School of Technology, Bangalore</p>
+          <p>2026 — 2030</p>
+        </div>
+
+        <div class="education-card">
+          <h3>Currently Learning HTML & CSS</h3>
+          <p>
+            I'm learning web development and building projects to grow my skills
+            in design, coding, and creative technology.
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h3>Became a member in AIML club</h3>
+          <p>
+            After a tough exam which was conducted by our senior AIML core team members I was selected to join AIML club.
+          </p>
+        </div>
+      </section>
+
+      <section class="hobbies">
+        <h2>My Hobbies</h2>
+
+        <div class="hobby-deck">
+          <div class="hobby-card">
+            <img src="images/b2.jpg" alt="art" class="hobby-img">
+            <h3>Art</h3>
+            <p>I enjoy drawing and exploring new creative ideas.</p>
+          </div>
+
+          <div class="hobby-card">
+            <img src="images/vd.jpg" alt="Video-Editing" class="hobby-img">
+            <h3>Video Editing</h3>
+            <p>I turn clips into engaging visual stories and videos.</p>
+          </div>
+
+          <div class="hobby-card">
+            <img src="images/Ai.jpg" alt="AI" class="hobby-img">
+            <h3>Exploring AI</h3>
+            <p>I enjoy learning new thing I don't know about.</p>
+          </div>
+
+          <div class="hobby-card">
+            <img src="images/m2.jpg" alt="Music" class="hobby-img">
+            <h3>Music</h3>
+            <p>I listen to music for enjoyment and inspiration.</p>
+          </div>
+
+          <div class="hobby-card">
+            <img src="images/sp.jpg" alt="Sports" class="hobby-img">
+            <h3>Sports</h3>
+            <p>I enjoy playing volleyball and basketball.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="skills" id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-cards">
+          <div class="skill-card" tabindex="0">
+            <div class="skill-front">
+              <span class="icon">🎨</span>
+              <h3>Video Editing</h3>
+              <p>Hover to explore</p>
+            </div>
+            <div class="skill-details">
+              <h3>Video Editing</h3>
+              <p>UI/UX design, Da Vinci resolve, Editing and typography.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" tabindex="0">
+            <div class="skill-front">
+              <span class="icon">💻</span>
+              <h3>Web Development</h3>
+              <p>Hover to explore</p>
+            </div>
+            <div class="skill-details">
+              <h3>Web Development</h3>
+              <p>HTML, CSS, JavaScript, and responsive websites.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" tabindex="0">
+            <div class="skill-front">
+              <span class="icon">🐍</span>
+              <h3>Python</h3>
+              <p>Hover to explore</p>
+            </div>
+            <div class="skill-details">
+              <h3>Python</h3>
+              <p>Challenged many contests in Codeforces and part of AIML club.</p>
+            </div>
+          </div>
+        </div>
+
+          <div class="skill-card" tabindex="0">
+            <div class="skill-front">
+              <span class="icon">🧩</span>
+              <h3>Problem Solving</h3>
+              <p>Hover to explore</p>
+            </div>
+            <div class="skill-details">
+              <h3>Problem Solving</h3>
+              <p>I enjoy breaking challenges into smaller steps, exploring different approaches, and finding practical solutions.Each challenge helps me think more clearly and improve my skills.</p>
+            </div>
+          </div>
+        </div>
+          
+      </section>
+
+      <section id="work">
+        <h2 id="work-title">From Concept to Creation</h2>
+        <div class="projects">
+          <div class="project">
+            <img class="project-image" src="images/Ai Kate.jpg" alt="Screenshot of Project One">
+            <div class="project-copy">
+              <h3>AI & Machine Learning Concept</h3>
+              <p>Explored how machine learning uses data to identify patterns and make predictions that can help solve real-world problems.</p>
+              <p class="role"><strong>My role:</strong> Researching AI/ML applications and concepts in it.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img class="project-image" src="images/rdwcreations_pindown.io_1790617799.jpg" alt="Screenshot of Project One">
+            <div class="project-copy">
+              <h3>Creative Idea Concept</h3>
+              <p>Turned an initial idea into a clear visual concept through brainstorming and sketching in Brainrot.It is a competition conducted by my seniors.
+              </p>
+              <p class="role"><strong>My role:</strong> Idea development and design</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img class="project-image" src="images/USA.jpg" alt="Screenshot of Project One">
+            <div class="project-copy">
+              <h3>Video Editing</h3>
+              <p>Edited video clips into a clear, engaging story by arranging scenes, adding transitions, and refining the timing.</p><br>
+              <p class="role"><strong>My role:</strong> Video editing and post-production<br><strong>Tools:</strong> Da Vinci Resolve</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img class="project-image" src="images/Art.jpg" alt="Screenshot of Project One">
+            <div class="project-copy">
+              <h3>Artistic Expression</h3>
+              <p>Art is a way that you can express your feeling to others. In simple way I can say Art in a way to express feeling in your heart.</p>
+              <p class="role"><strong>My role:</strong>Your contribution<br><strong>Tools:</strong>Feeling in your heart</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="learning">
+        <h2>Currently Learning</h2>
+        <p class="learning-intro">
+          I'm building my skills through hands-on practice and personal projects.
+        </p>
+
+        <div class="learning-cards">
+          <div class="education-card">
+            <h3>Web Development</h3>
+            <p>Learning HTML and CSS while creating and improving my portfolio.</p>
+          </div>
+
+          <div class="education-card">
+            <h3>Artificial Intelligence</h3>
+            <p>Exploring AI and machine learning concepts and how they can be used.</p>
+          </div>
+
+          <div class="education-card">
+            <h3>ICP</h3>
+            <p>Practicing how to code in java. And preparing how to approach different questions.</p>
+          </div>
+
+          <div class="education-card">
+              <h3>Video Editing</h3>
+              <p>Practicing how to shape clips into clear, engaging stories.</p>
+          </div>
+        </div>
+          
+      </section>
+  
+
+      <section class="contact" id="contact">
+        <h2>Let's build something together.</h2>
+        <p>Have an idea or just want to say hello? Send me a message.</p>
+
+        <div class="contact-links">
+          <a href="https://mail.google.com">Email</a>
+          <a href="https://github.com/Satya-Yogi">GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/satya-yogieswar-67a862426/">LinkedIn</a>
+        </div>
+
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="Name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" rows="5" placeholder="Write your message..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+
+  </main>
+  
+  
+  
+  <footer>
+    <div class="wrap">© <span id="year"></span>Satya</div>
+  </footer>
+
+</body>
+</html>
